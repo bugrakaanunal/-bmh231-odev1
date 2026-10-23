@@ -12,7 +12,12 @@ const server = http.createServer((req, res) => {
     if (req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         return res.end('<h1>Ana Sayfa (v1)</h1><a href="/hakkimda">Hakkımda</a>');
-    } else if (req.url === '/api/ders') {
+    } 
+      else if (req.url === '/hakkimda') {
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        return res.end('<h1>Hakkımda</h1><p>Buğra Kaan Ünal, Bilgisayar Mühendisliği.</p>');
+      
+      else if (req.url === '/api/ders') {
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
         return res.end(JSON.stringify({ kod: 'BMH231', ad: 'Web Temelleri', gun: 'Cuma' }));
     } else if (req.url === '/api/agep') {
